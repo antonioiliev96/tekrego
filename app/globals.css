@@ -1,0 +1,279 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Massage Studio Ruse - Design System
+   Warm, calming spa aesthetic with Bulgarian warmth
+   All colors in HSL format
+*/
+
+/* Fonts are loaded via next/font in lib/fonts.ts for optimal performance */
+
+@layer base {
+  :root {
+    /* Core palette - Vibrant pink spa aesthetic */
+    --background: 330 20% 97%;
+    --foreground: 330 10% 12%;
+
+    --card: 330 15% 99%;
+    --card-foreground: 330 10% 12%;
+
+    --popover: 330 10% 95%;
+    --popover-foreground: 330 10% 12%;
+
+    /* Primary - Vibrant Pink #E71A77 */
+    --primary: 336 84% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Deep plum */
+    --secondary: 330 25% 22%;
+    --secondary-foreground: 330 10% 96%;
+
+    /* Muted - Warm rose gray */
+    --muted: 330 8% 60%;
+    --muted-foreground: 330 10% 25%;
+
+    /* Accent - Soft blush */
+    --accent: 336 60% 94%;
+    --accent-foreground: 336 84% 42%;
+
+    /* Destructive */
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & inputs */
+    --border: 330 15% 88%;
+    --input: 330 15% 88%;
+    --ring: 336 84% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --cream: 330 20% 97%;
+    --cream-dark: 330 15% 93%;
+    --forest: 336 84% 42%;
+    --forest-light: 336 70% 55%;
+    --sage: 330 20% 90%;
+    --terracotta: 350 60% 55%;
+    --terracotta-light: 350 50% 65%;
+    --gold: 42 65% 55%;
+    --stone: 330 8% 45%;
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(336 40% 30% / 0.08);
+    --shadow-medium: 0 8px 30px -8px hsl(336 40% 30% / 0.12);
+    --shadow-card: 0 2px 12px -2px hsl(336 40% 30% / 0.06);
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(330 20% 97%) 0%, hsl(336 60% 96%) 100%);
+    --gradient-forest: linear-gradient(135deg, hsl(336 84% 42%) 0%, hsl(336 70% 55%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(336 84% 50%) 0%, hsl(350 60% 60%) 100%);
+
+    /* Sidebar (keeping defaults) */
+    --sidebar-background: 40 30% 98%;
+    --sidebar-foreground: 0 0% 9%;
+    --sidebar-primary: 20 90% 48%;
+    --sidebar-primary-foreground: 33 100% 96%;
+    --sidebar-accent: 0 0% 32%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 83%;
+    --sidebar-ring: 20 90% 48%;
+    --chart-1: 27 95% 60%;
+    --chart-2: 43 96% 56%;
+    --chart-3: 47 95% 53%;
+    --chart-4: 24 94% 53%;
+    --chart-5: 0 0% 45%;
+    --sidebar: 0 0% 98%;
+    --font-sans: 'Roboto', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    --font-serif: 'Libre Caslon Text', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    --font-mono: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
+    --animation-duration:  120s;
+  }
+
+  .dark {
+    --background: 330 10% 8%;
+    --foreground: 330 10% 96%;
+
+    --card: 330 10% 12%;
+    --card-foreground: 330 10% 96%;
+
+    --popover: 330 10% 18%;
+    --popover-foreground: 330 10% 96%;
+
+    --primary: 336 84% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 330 15% 35%;
+    --secondary-foreground: 330 10% 96%;
+
+    --muted: 330 8% 40%;
+    --muted-foreground: 330 10% 85%;
+
+    --accent: 336 50% 18%;
+    --accent-foreground: 336 70% 70%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 330 10% 22%;
+    --input: 330 10% 22%;
+    --ring: 336 84% 55%;
+
+    --sidebar-background: 25 15% 10%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 27 95% 60%;
+    --sidebar-primary-foreground: 12 81% 14%;
+    --sidebar-accent: 43 96% 56%;
+    --sidebar-accent-foreground: 20 91% 14%;
+    --sidebar-border: 0 0% 32%;
+    --sidebar-ring: 27 95% 60%;
+    --chart-1: 30 97% 72%;
+    --chart-2: 45 96% 64%;
+    --chart-3: 48 96% 76%;
+    --chart-4: 27 95% 60%;
+    --chart-5: 0 0% 45%;
+    --sidebar: 0 0% 14%;
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-roboto), var(--font-inter), system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-cormorant), var(--font-serif), Georgia, serif;
+    @apply font-semibold tracking-tight;
+  }
+
+  /* Styled scrollbar with primary color */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.4);
+    border-radius: 5px;
+    border: 2px solid hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.6);
+  }
+
+  /* Firefox scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary) / 0.4) hsl(var(--background));
+  }
+}
+
+@layer components {
+  /* Section styling */
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .section-alt {
+    @apply py-16 md:py-24 bg-cream-dark;
+  }
+
+  /* Container */
+  .container-narrow {
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-medium hover:-translate-y-1;
+  }
+
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-forest to-forest-light;
+  }
+
+  /* Decorative line */
+  .decorative-line {
+    @apply w-16 h-0.5 bg-gradient-to-r from-terracotta to-gold;
+  }
+
+  /* Link underline animation */
+  .link-underline {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-accent after:transition-all after:duration-300 hover:after:w-full;
+  }
+}
+
+@layer utilities {
+  /* Custom colors as utilities */
+  .bg-cream { background-color: hsl(var(--cream)); }
+  .bg-cream-dark { background-color: hsl(var(--cream-dark)); }
+  .bg-forest { background-color: hsl(var(--forest)); }
+  .bg-sage { background-color: hsl(var(--sage)); }
+  .bg-terracotta { background-color: hsl(var(--terracotta)); }
+  .bg-gold { background-color: hsl(var(--gold)); }
+
+  .text-forest { color: hsl(var(--forest)); }
+  .text-forest-light { color: hsl(var(--forest-light)); }
+  .text-terracotta { color: hsl(var(--terracotta)); }
+  .text-stone { color: hsl(var(--stone)); }
+  .text-gold { color: hsl(var(--gold)); }
+
+  .border-sage { border-color: hsl(var(--sage)); }
+  .border-forest { border-color: hsl(var(--forest)); }
+
+  /* Gradients */
+  .bg-gradient-hero { background: var(--gradient-hero); }
+  .bg-gradient-forest { background: var(--gradient-forest); }
+  .bg-gradient-warm { background: var(--gradient-warm); }
+
+  /* Shadows */
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+
+  /* Hero/one-shot animations use Tailwind theme (animate-fade-in, animate-slide-up)
+     defined in tailwind.config.ts – no duplicate definitions here to avoid doubled animations on load */
+}
+
+/* Faster testimonial carousel on mobile (screens < 768px) */
+/* @media (max-width: 767px) { */
+  .animate-slide-left,
+  .animate-slide-right {
+    animation-duration:  var(--animation-duration);
+  }
+/* } */
