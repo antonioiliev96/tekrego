@@ -4,13 +4,11 @@ import Section from "@/components/ui/Section";
 import PageHeader from "@/components/ui/PageHeader";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/content/siteContent";
+import { contactMetadata } from "@/lib/metadata";
 import { Phone, Mail, MapPin, Clock, MessageCircle, Navigation } from "lucide-react";
 import { FacebookIcon, InstagramIcon } from "@/components/icons/SocialIcons";
 
-export const metadata: Metadata = {
-    title: "Контакти",
-    description: `Свържете се с ${siteConfig.business.name}. Адрес: ${siteConfig.business.address.full}. Телефон: ${siteConfig.business.phone}.`,
-};
+export const metadata: Metadata = contactMetadata;
 
 export default function ContactPage() {
     return (

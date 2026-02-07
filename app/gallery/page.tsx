@@ -3,11 +3,9 @@ import Image from "next/image";
 import Section from "@/components/ui/Section";
 import PageHeader from "@/components/ui/PageHeader";
 import { galleryImageAssets } from "@/public/assets/galleryImages";
+import { galleryMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-    title: "Галерия",
-    description: "Разгледайте нашето масажно студио в Русе - уютна обстановка, професионално оборудване и релаксираща атмосфера.",
-};
+export const metadata: Metadata = galleryMetadata;
 
 export default function GalleryPage() {
     return (

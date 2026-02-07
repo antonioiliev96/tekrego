@@ -5,13 +5,14 @@ import PageHeader from "@/components/ui/PageHeader";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { Button } from "@/components/ui/button";
 import { services, siteConfig } from "@/content/siteContent";
+import { serviceMetadata } from "@/lib/metadata";
 import { Phone, Clock, Check, AlertCircle, ArrowRight } from "lucide-react";
 import * as LucideIcons from "lucide-react";
 
-export const metadata: Metadata = {
-    title: "Масажни услуги",
-    description: "Професионални масажни услуги в Русе: класически, лечебен, Юмейхо терапия, антистрес и още. Сертифициран терапевт с индивидуален подход.",
-};
+export const metadata: Metadata = serviceMetadata(
+    "Масажни услуги",
+    "Професионални масажни услуги в Русе: класически, лечебен, Юмейхо терапия, антистрес и още. Сертифициран терапевт с индивидуален подход."
+);
 
 const PlasmaBackground = () => (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
