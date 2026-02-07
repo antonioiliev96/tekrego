@@ -21,6 +21,7 @@ export function generateMetadata(config: OpenGraphConfig = {}): Metadata {
   const fullImageUrl = image.startsWith("http") ? image : `${siteConfig.seo.siteUrl}${image}`;
 
   return {
+    metadataBase: new URL(siteConfig.seo.siteUrl),
     title,
     description,
     keywords: siteConfig.seo.keywords,

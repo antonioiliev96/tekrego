@@ -5,11 +5,13 @@ import Footer from "@/components/layout/Footer";
 import { LocalBusinessSchema } from "@/components/SEO";
 import { inter, libreCaslonText, roboto, robotoMono, cormorantGaramond } from "@/lib/fonts";
 import { defaultMetadata } from "@/lib/metadata";
+import { siteConfig } from "@/content/siteContent";
 import "@/app/globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
     ...defaultMetadata,
+    metadataBase: new URL(siteConfig.seo.siteUrl),
     title: {
         default: "Юмейхо център ТекрегО | Професионални Масажи и Юмейхо Терапия",
         template: "%s | Юмейхо център ТекрегО",
@@ -41,13 +43,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 <meta name="twitter:image:alt" content="Юмейхо център ТекрегО - Професионални масажи в Русе" />
                 
                 {/* WhatsApp and Telegram specific meta tags */}
-                <meta property="og:image:secure_url" content="https://massage-ruse.bg/og-image.png" />
+                <meta property="og:image:secure_url" content={`${siteConfig.seo.siteUrl}/og-image.png`} />
                 
                 {/* LinkedIn specific meta tags */}
-                <meta property="og:site_name" content="Юмейхо център ТекрегО" />
+                <meta property="og:site_name" content={siteConfig.business.name} />
                 
                 {/* Viber specific meta tags */}
-                <meta name="viber:sharing:image" content="https://massage-ruse.bg/og-image.png" />
+                <meta name="viber:sharing:image" content={`${siteConfig.seo.siteUrl}/og-image.png`} />
                 
                 {/* General meta tags for better SEO */}
                 <meta name="theme-color" content="#1f2937" />
