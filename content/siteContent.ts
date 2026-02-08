@@ -55,7 +55,7 @@ export const siteConfig = {
   // ---------------------------------------------------------------------------
   seo: {
     siteUrl: "https://tekrego.vercel.app", // Updated to match your current deployment
-    defaultTitle: "Юмейхо център ТекрегО | Масажи в Русе",
+    defaultTitle: "Юмейхо център ТекрегО | Професионални Масажи и Юмейхо Терапия",
     titleTemplate: "%s | Юмейхо център ТекрегО",
     defaultDescription: "Професионално масажно студио в Русе. Класически, лечебни и Юмейхо масажи от сертифициран терапевт. Записване: +359 88 888 8888",
     keywords: [
