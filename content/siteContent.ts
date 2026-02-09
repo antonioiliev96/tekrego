@@ -38,15 +38,14 @@ export const siteConfig = {
       note: "Само с предварително записан час",
     },
     
-    // Social & booking links
+    // Social & booking links (bookings: phone call and Viber only)
     links: {
       viber: "viber://chat?number=%2B359877225535",
-      whatsapp: "https://wa.me/359877225535",
       googleMaps: "https://maps.google.com/?q=Ruse+Bulgaria", // TODO: Replace with actual location
       googleMapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46387.96850978396!2d25.935!3d43.857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40ae60f1f0c1e4e3%3A0x400a01269bf4e30!2sRuse%2C%20Bulgaria!5e0!3m2!1sen!2s!4v1234567890", // TODO: Replace with your embed URL
       googleBusiness: "https://g.page/your-business", // TODO: Replace with your Google Business URL
-      facebook: "https://facebook.com/your-page", // TODO: Replace
-      instagram: "https://instagram.com/your-page", // TODO: Replace
+      facebook: "https://www.facebook.com/share/1BrGUwkMzZ/?mibextid=wwXIfr",
+      instagram: "https://www.instagram.com/_tekrego_?igsh=MXQ4a2VwNmlzN2ZtMA==",
     },
   },
 
@@ -314,7 +313,7 @@ export const testimonials = [
 export const faqs = [
   {
     question: "Как мога да си запазя час?",
-    answer: "Можете да запазите час по телефон, Viber или WhatsApp. Препоръчваме да се свържете с нас поне 1 ден предварително, за да изберете удобно за вас време.",
+    answer: "Можете да запазите час по телефон или Viber. Препоръчваме да се свържете с нас поне 1 ден предварително, за да изберете удобно за вас време.",
   },
   {
     question: "Какво да нося по време на масажа?",
@@ -385,8 +384,8 @@ export const teamMembers = [
     specialties: ["Юмейхо", "Лечебен масаж", "Рефлексотерапия"],
     social: {
       phone: "+359877225535",
-      instagram: "https://instagram.com",
-      facebook: "https://facebook.com",
+      instagram: "https://www.instagram.com/_tekrego_?igsh=MXQ4a2VwNmlzN2ZtMA==",
+      facebook: "https://www.facebook.com/share/1BrGUwkMzZ/?mibextid=wwXIfr",
     },
   },
   {
@@ -398,8 +397,8 @@ export const teamMembers = [
     specialties: ["Ароматерапия", "Антистрес", "Масаж на ходила"],
     social: {
       phone: "+359877225535",
-      instagram: "https://instagram.com",
-      facebook: "https://facebook.com",
+      instagram: "https://www.instagram.com/_tekrego_?igsh=MXQ4a2VwNmlzN2ZtMA==",
+      facebook: "https://www.facebook.com/share/1BrGUwkMzZ/?mibextid=wwXIfr",
     },
   },
 ];
@@ -411,7 +410,7 @@ export const howItWorks = [
   {
     step: 1,
     title: "Запазете час",
-    description: "Обадете се или пишете по Viber/WhatsApp за да изберем удобно време за вас.",
+    description: "Обадете се или пишете по Viber за да изберем удобно време за вас.",
     icon: "Phone",
   },
   {
@@ -470,7 +469,7 @@ export const galleryImages = [
 // ---------------------------------------------------------------------------
 export const policies = {
   booking: `
-    Записване за час се извършва по телефон, Viber или WhatsApp.
+    Записване за час се извършва по телефон или Viber.
     Препоръчваме да запазите час поне 24 часа предварително.
     При първо посещение, моля пристигнете 10 минути по-рано.
   `,

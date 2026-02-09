@@ -65,7 +65,7 @@ const ContactPreview = () => {
           </div>
         </div>
 
-        {/* Action Buttons */}
+        {/* Action Buttons - bookings by phone or Viber only */}
         <div className="flex flex-wrap gap-3">
           <Button variant="cta" asChild>
             <a href={`tel:${siteConfig.business.phoneClean}`}>
@@ -77,11 +77,6 @@ const ContactPreview = () => {
             <a href={siteConfig.business.links.viber}>
               <MessageCircle className="w-4 h-4 mr-2" />
               Viber
-            </a>
-          </Button>
-          <Button variant="outline" asChild>
-            <a href={siteConfig.business.links.whatsapp} target="_blank" rel="noopener noreferrer">
-              WhatsApp
             </a>
           </Button>
         </div>
