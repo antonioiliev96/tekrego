@@ -42,12 +42,21 @@ const ContactPreview = () => {
             </div>
             <div>
               <p className="font-medium text-foreground">Телефон</p>
-              <a 
-                href={`tel:${siteConfig.business.phoneClean}`}
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                {siteConfig.business.phone}
-              </a>
+              <div className="flex flex-col gap-1">
+
+                <a
+                  href={`tel:${siteConfig.business.phoneClean}`}
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {siteConfig.business.phone}
+                </a>
+                <a
+                  href="tel:+359897024908"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  +359 89 7024908
+                </a>
+              </div>
             </div>
           </div>
 
@@ -59,7 +68,8 @@ const ContactPreview = () => {
               <p className="font-medium text-foreground">Работно време</p>
               <p className="text-muted-foreground">
                 Пон-Пет: {siteConfig.business.hours.weekdays}<br />
-                Събота: {siteConfig.business.hours.saturday}
+                Събота: {siteConfig.business.hours.saturday}<br />
+                Неделя: {siteConfig.business.hours.sunday}
               </p>
             </div>
           </div>

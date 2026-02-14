@@ -29,7 +29,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6">
             {siteConfig.navigation.main.map((item) => (
               <Link
                 key={item.href}
@@ -42,7 +42,7 @@ const Header = () => {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4">
             <Button variant="cta" size="lg" asChild>
               <a href={`tel:${siteConfig.business.phoneClean}`}>
                 <Phone className="w-4 h-4 mr-2" />
@@ -53,7 +53,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-foreground"
+            className="lg:hidden p-2 text-foreground"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -63,25 +63,27 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border animate-slide-up">
-            <nav className="flex flex-col gap-4">
-              {siteConfig.navigation.main.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <Button variant="cta" className="mt-4" asChild>
-                <a href={`tel:${siteConfig.business.phoneClean}`}>
-                  <Phone className="w-4 h-4 mr-2" />
-                  Запази час
-                </a>
-              </Button>
-            </nav>
+          <div className="lg:hidden absolute top-full left-0 right-0 z-40 bg-background border-b border-border shadow-lg animate-slide-up">
+            <div className="container-wide py-4">
+              <nav className="flex flex-col gap-4">
+                {siteConfig.navigation.main.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+                <Button variant="cta" className="mt-4" asChild>
+                  <a href={`tel:${siteConfig.business.phoneClean}`}>
+                    <Phone className="w-4 h-4 mr-2" />
+                    Запази час
+                  </a>
+                </Button>
+              </nav>
+            </div>
           </div>
         )}
       </div>

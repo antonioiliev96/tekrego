@@ -98,15 +98,18 @@ export default function HomePage() {
                 </AnimateOnScroll>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {previewServices.slice(0, 3).map((service, index) => (
-                        <AnimateOnScroll key={service.id} delay={index * 150} direction="up">
-                            <ServiceCard service={service} variant="default" />
+                        <AnimateOnScroll key={service.id} delay={index * 150} direction="up" className="h-full">
+                            <ServiceCard service={service} variant="default" className="h-full" />
                         </AnimateOnScroll>
                     ))}
                 </div>
-                <div className="text-center mt-12">
+                <div className="text-center mt-8">
+                    <p className="text-muted-foreground mb-6">
+                        Това са само част от нашите услуги. Разполагаме с още терапии и масажи, всяка от които е съобразена с вашите индивидуални нужди.
+                    </p>
                     <Button variant="default" size="lg" asChild>
                         <Link href="/services">
-                            Вижте всички услуги
+                            Вижте всички {services.length} услуги
                             <ArrowRight className="w-5 h-5 ml-2" />
                         </Link>
                     </Button>

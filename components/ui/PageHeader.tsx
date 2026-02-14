@@ -11,7 +11,7 @@ interface PageHeaderProps {
 
 const PageHeader = ({ subtitle, title, description, className }: PageHeaderProps) => {
   return (
-    <section className={cn("relative py-16 md:py-20 overflow-hidden bg-cream-dark", className)}>
+    <section className={cn("relative pt-24 pb-16 md:py-20 overflow-hidden bg-cream-dark", className)}>
       {/* Organic flowing background - no pattern, just beautiful shapes */}
       
       {/* Primary organic shapes */}

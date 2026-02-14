@@ -30,18 +30,28 @@ export default function ContactPage() {
 
                         <div className="space-y-6">
                             {/* Phone */}
-                            <a
-                                href={`tel:${siteConfig.business.phoneClean}`}
-                                className="flex items-start gap-4 p-4 rounded-xl bg-card border border-border/50 hover:shadow-card transition-all group"
-                            >
+                            <div className="flex items-start gap-4 p-4 rounded-xl bg-card border border-border/50">
                                 <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
                                     <Phone className="w-5 h-5 text-accent-foreground" />
                                 </div>
                                 <div>
-                                    <p className="font-medium text-foreground group-hover:text-primary transition-colors">Телефон</p>
-                                    <p className="text-muted-foreground">{siteConfig.business.phone}</p>
+                                    <p className="font-medium text-foreground mb-2">Телефон</p>
+                                    <div className="flex flex-col gap-1">
+                                        <a
+                                            href={`tel:${siteConfig.business.phoneClean}`}
+                                            className="text-muted-foreground hover:text-primary transition-colors"
+                                        >
+                                            {siteConfig.business.phone}
+                                        </a>
+                                        <a
+                                            href="tel:+359897024908"
+                                            className="text-muted-foreground hover:text-primary transition-colors"
+                                        >
+                                            +359 89 7024908
+                                        </a>
+                                    </div>
                                 </div>
-                            </a>
+                            </div>
 
                             {/* Email */}
                             <a
@@ -136,7 +146,7 @@ export default function ContactPage() {
                                 Как да ни намерите
                             </h3>
                             <p className="text-muted-foreground text-sm leading-relaxed">
-                                Студиото се намира в центъра на Русе, с лесен достъп от всички части на
+                                Студиото се намира на улица Николаевска 91 в Русе, с лесен достъп от всички части на
                                 града. Има удобно паркиране наблизо. При нужда от допълнителни указания,
                                 не се колебайте да се обадите.
                             </p>

@@ -17,7 +17,7 @@ interface SlidingTestimonialsProps {
 }
 
 const TestimonialPill = ({ testimonial }: { testimonial: Testimonial }) => (
-  <div className="flex-shrink-0 w-[340px] md:w-[400px] bg-card rounded-2xl p-6 border border-border shadow-card mx-3">
+  <div className="flex-shrink-0 w-[340px] md:w-[400px] bg-card rounded-2xl p-6 border border-border shadow-card mx-3 flex flex-col">
     <div className="flex gap-1 mb-3">
       {[...Array(5)].map((_, i) => (
         <Star
@@ -29,14 +29,11 @@ const TestimonialPill = ({ testimonial }: { testimonial: Testimonial }) => (
         />
       ))}
     </div>
-    <blockquote className="text-foreground text-sm leading-relaxed mb-4">
+    <blockquote className="text-foreground text-sm leading-relaxed mb-4 flex-1">
       &ldquo;{testimonial.text}&rdquo;
     </blockquote>
-    <div>
+    <div className="mt-auto">
       <p className="font-medium text-foreground text-sm">{testimonial.name}</p>
-      {testimonial.service && (
-        <p className="text-xs text-muted-foreground">{testimonial.service}</p>
-      )}
     </div>
   </div>
 );

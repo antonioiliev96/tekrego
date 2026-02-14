@@ -13,16 +13,20 @@ export const metadata: Metadata = {
     ...defaultMetadata,
     metadataBase: new URL(siteConfig.seo.siteUrl),
     title: {
-        default: "Юмейхо център ТекрегО | Професионални Масажи и Юмейхо Терапия",
+        default: "Юмейхо център ТекрегО | Професионални Масажи и Юмейхо Терапия в Русе",
         template: "%s | Юмейхо център ТекрегО",
     },
+    description: "Професионално масажно студио в центъра на Русе. Юмейхо терапия, класически масаж, биорезонанс, вендузотерапия и още. Сертифициран терапевт. Записване: +359 87 7225535",
     appleWebApp: {
         title: "ТекрегО",
         statusBarStyle: "default",
         capable: true,
     },
     verification: {
-        google: "your-google-verification-code", // TODO: Replace with actual verification code
+        google: "your-google-verification-code",
+    },
+    other: {
+        "google-site-verification": "your-google-verification-code",
     },
 };
 

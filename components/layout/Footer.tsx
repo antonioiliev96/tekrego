@@ -86,13 +86,23 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-serif text-lg font-semibold">Контакти</h4>
             <div className="space-y-3 text-sm">
-              <a
-                href={`tel:${siteConfig.business.phoneClean}`}
-                className="flex items-start gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-              >
+              <div className="flex items-start gap-3 text-primary-foreground/80">
                 <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>{siteConfig.business.phone}</span>
-              </a>
+                <div className="flex flex-col gap-1">
+                  <a
+                    href={`tel:${siteConfig.business.phoneClean}`}
+                    className="hover:text-primary-foreground transition-colors"
+                  >
+                    {siteConfig.business.phone}
+                  </a>
+                  <a
+                    href="tel:+359897024908"
+                    className="hover:text-primary-foreground transition-colors"
+                  >
+                    +359 89 7024908
+                  </a>
+                </div>
+              </div>
               <a
                 href={`mailto:${siteConfig.business.email}`}
                 className="flex items-start gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors"

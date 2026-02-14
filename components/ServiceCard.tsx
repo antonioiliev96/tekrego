@@ -9,9 +9,11 @@ interface ServiceCardProps {
     slug: string;
     name: string;
     shortDescription: string;
-    durations: { minutes: number }[];
+    durations?: { minutes: number }[];
     benefits?: string[];
+    effects?: string[];
     icon?: string;
+    dedicatedPage?: string;
   };
   variant?: "default" | "featured";
   className?: string;
@@ -23,6 +25,7 @@ const ServiceCard = ({ service, variant = "default", className }: ServiceCardPro
     : LucideIcons.Sparkles;
 
   const isFeatured = variant === "featured";
+  const linkHref = service.dedicatedPage || `/services#${service.slug}`;
 
   return (
     <div
@@ -68,10 +71,10 @@ const ServiceCard = ({ service, variant = "default", className }: ServiceCardPro
           {service.shortDescription}
         </p>
 
-        {/* Benefits preview */}
-        {service.benefits && (
+        {/* Benefits/Effects preview */}
+        {(service.benefits || service.effects) && (
           <ul className="space-y-2 mb-6">
-            {service.benefits.slice(0, 3).map((b) => (
+            {(service.effects || service.benefits)?.slice(0, 3).map((b) => (
               <li key={b} className={cn(
                 "flex items-center gap-2 text-xs",
                 isFeatured ? "text-primary-foreground/75" : "text-muted-foreground"
@@ -95,7 +98,7 @@ const ServiceCard = ({ service, variant = "default", className }: ServiceCardPro
         {/* CTA */}
         <div className="flex items-center justify-end">
           <Link
-            href={`/services#${service.slug}`}
+            href={linkHref}
             className={cn(
               "inline-flex items-center gap-1.5 text-sm font-medium transition-all group/link",
               isFeatured
@@ -103,7 +106,7 @@ const ServiceCard = ({ service, variant = "default", className }: ServiceCardPro
                 : "text-primary hover:text-accent-foreground"
             )}
           >
-            Детайли
+            {service.dedicatedPage ? "Научете повече" : "Детайли"}
             <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
           </Link>
         </div>
