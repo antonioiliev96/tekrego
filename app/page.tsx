@@ -121,7 +121,7 @@ export default function HomePage() {
                 <AnimateOnScroll>
                     <SectionHeader
                         subtitle="Лесно и удобно"
-                        title="Как да запазите час?"
+                        title="Процесът е лесен"
                         description="Само три прости стъпки ви делят от релаксиращо преживяване."
                     />
                 </AnimateOnScroll>
