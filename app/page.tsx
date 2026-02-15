@@ -190,7 +190,7 @@ export default function HomePage() {
                     <SectionHeader
                         subtitle="Локация"
                         title="Къде да ни намерите"
-                        description="Лесен достъп и удобно паркиране в центъра на Русе."
+                        description="Лесен достъп и удобно паркиране в централната част на Русе."
                     />
                 </AnimateOnScroll>
                 <AnimateOnScroll delay={200}>
