@@ -43,7 +43,7 @@ export const siteConfig = {
       viber: "viber://chat?number=%2B359877225535",
       googleMaps: "https://maps.google.com/?q=43.8360018,25.9530022",
       googleMapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2877.9564081805365!2d25.9530022!3d43.8360018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40ae611eebec352d%3A0x45d1621766bf69dd!2z0K7QvNC10LnRhdC-INGG0LXQvdGC0YrRgCDQotC10JrRgNC10LPQng!5e0!3m2!1sen!2sbg!4v1771094626961!5m2!1sbg!2sbg",
-      googleBusiness: "https://g.page/your-business", // TODO: Replace with your Google Business URL
+      googleBusiness: "https://maps.app.goo.gl/mUUyfRwj4pE2zsD29", // TODO: Replace with your Google Business URL
       facebook: "https://www.facebook.com/TeKregO/",
       instagram: "https://www.instagram.com/_tekrego_/",
     },
