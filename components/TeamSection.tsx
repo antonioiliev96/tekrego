@@ -39,8 +39,8 @@ const TeamSection = () => {
                   src={member.photo}
                   alt={`${member.name} - ${member.role.split('|')[0].trim()} в ТеКрегО Русе`}
                   fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  quality={80}
+                  sizes="(max-width: 768px) 100vw, 384px"
+                  quality={70}
                   className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
                 />
                 {/* Gradient overlay */}

@@ -8,7 +8,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary text-primary-foreground relative overflow-hidden" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 500px' }}>
+    <footer className="bg-primary text-primary-foreground relative overflow-hidden">
       {/* Decorative pattern - concentric circles */}
       <div
         className="absolute inset-0 pointer-events-none"
