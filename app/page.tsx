@@ -37,16 +37,18 @@ export default function HomePage() {
             {/* ========== HERO SECTION ========== */}
             <section className="relative min-h-[90vh] flex items-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
+                    {/* Mobile hero image */}
                     <Image
-                        src="/massage/massage4.webp"
-                        alt="Юмейхо център ТеКрего - професионални масажи и терапии в Русе"
+                        src="/team/hero-phone.webp"
+                        alt="Юмейхо център ТеКрегО - професионални масажи и терапии в Русе"
                         fill
                         sizes="100vw"
                         className="object-cover"
                         priority
-                        quality={85}
+                        fetchPriority="high"
+                        quality={75}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-l from-background/90 via-background/85 to-background/70" />
+                    <div className="absolute inset-0 bg-gradient-to-l from-background/65 via-background/90 to-background/65    " />
                 </div>
 
                 <div className="container-wide relative z-10 py-20 md:py-32">
@@ -219,27 +221,27 @@ export default function HomePage() {
             {/* ========== CTA SECTION ========== */}
             <Section variant="alt">
                 <AnimateOnScroll direction="none">
-                <div className="text-center max-w-2xl mx-auto">
-                    <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6">
-                        Готови ли сте да се отпуснете?
-                    </h2>
-                    <p className="text-muted-foreground mb-8">
-                        Запазете час сега и се насладете на професионална грижа за вашето тяло и дух.
-                    </p>
-                    <div className="flex flex-wrap justify-center gap-4">
-                        <Button variant="default" size="lg" asChild>
-                            <a href={`tel:${siteConfig.business.phoneClean}`}>
-                                <Phone className="w-5 h-5 mr-2" />
-                                Обадете се сега
-                            </a>
-                        </Button>
-                        <Button variant="outline" size="lg" className="border-secondary-foreground/50 text-secondary hover:bg-secondary-foreground hover:text-secondary" asChild>
-                            <a href={siteConfig.business.links.viber}>
-                                Пишете ни във Viber
-                            </a>
-                        </Button>
+                    <div className="text-center max-w-2xl mx-auto">
+                        <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6">
+                            Готови ли сте да се отпуснете?
+                        </h2>
+                        <p className="text-muted-foreground mb-8">
+                            Запазете час сега и се насладете на професионална грижа за вашето тяло и дух.
+                        </p>
+                        <div className="flex flex-wrap justify-center gap-4">
+                            <Button variant="default" size="lg" asChild>
+                                <a href={`tel:${siteConfig.business.phoneClean}`}>
+                                    <Phone className="w-5 h-5 mr-2" />
+                                    Обадете се сега
+                                </a>
+                            </Button>
+                            <Button variant="outline" size="lg" className="border-secondary-foreground/50 text-secondary hover:bg-secondary-foreground hover:text-secondary" asChild>
+                                <a href={siteConfig.business.links.viber}>
+                                    Пишете ни във Viber
+                                </a>
+                            </Button>
+                        </div>
                     </div>
-                </div>
                 </AnimateOnScroll>
             </Section>
         </>

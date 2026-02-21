@@ -13,12 +13,12 @@ export const metadata: Metadata = {
     ...defaultMetadata,
     metadataBase: new URL(siteConfig.seo.siteUrl),
     title: {
-        default: "Юмейхо център ТекрегО | Професионални Масажи и Юмейхо Терапия в Русе",
-        template: "%s | Юмейхо център ТекрегО",
+        default: "Юмейхо център ТеКрегО | Професионални Масажи и Юмейхо Терапия в Русе",
+        template: "%s | Юмейхо център ТеКрегО",
     },
     description: "Професионално масажно студио в централната част на Русе. Юмейхо терапия, класически масаж, биорезонанс, вендузотерапия и още. Сертифициран терапевт. Записване: +359 87 7225535",
     appleWebApp: {
-        title: "ТекрегО",
+        title: "ТеКрегО",
         statusBarStyle: "default",
         capable: true,
     },
@@ -32,8 +32,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
                 <meta property="og:image:type" content="image/png" />
-                <meta property="og:image:alt" content="Юмейхо център ТекрегО - Професионални масажи в Русе" />
-                <meta name="twitter:image:alt" content="Юмейхо център ТекрегО - Професионални масажи в Русе" />
+                <meta property="og:image:alt" content="Юмейхо център ТеКрегО - Професионални масажи в Русе" />
+                <meta name="twitter:image:alt" content="Юмейхо център ТеКрегО - Професионални масажи в Русе" />
                 <meta property="og:image:secure_url" content={`${siteConfig.seo.siteUrl}/og-image.png`} />
                 <meta property="og:site_name" content={siteConfig.business.name} />
                 <meta name="theme-color" content="#1f2937" />

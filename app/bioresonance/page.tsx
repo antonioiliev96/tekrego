@@ -21,7 +21,7 @@ import {
 
 export const metadata: Metadata = serviceMetadata(
     "Биорезонансна диагностика",
-    "Съвременен неинвазивен метод за цялостна картина на състоянието на организма. Холистичен подход към здравето в ТеКрего."
+    "Съвременен неинвазивен метод за цялостна картина на състоянието на организма. Холистичен подход към здравето в ТеКрегО."
 );
 
 const whatIncludes = [
@@ -98,7 +98,7 @@ export default function BioresonancePage() {
             <PageHeader
                 subtitle="Биорезонансна диагностика"
                 title="Холистичен анализ"
-                description="В ТеКрего работим с човека като единна система – тяло, психика, енергия и съзнание. Биорезонансната диагностика е съвременен неинвазивен метод, който ни позволява да получим цялостна картина за състоянието на организма на информационно и функционално ниво."
+                description="В ТеКрегО работим с човека като единна система – тяло, психика, енергия и съзнание. Биорезонансната диагностика е съвременен неинвазивен метод, който ни позволява да получим цялостна картина за състоянието на организма на информационно и функционално ниво."
             />
 
             {/* Back link */}
@@ -156,7 +156,7 @@ export default function BioresonancePage() {
                         <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
                             <Image
                                 src="/bioresonance/boiphilia.webp"
-                                alt="Биорезонансна диагностика с апарат Biophilia в ТеКрего"
+                                alt="Биорезонансна диагностика с апарат Biophilia в ТеКрегО"
                                 fill
                                 sizes="(max-width: 768px) 50vw, 40vw"
                                 className="object-cover"
@@ -167,7 +167,7 @@ export default function BioresonancePage() {
                         <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
                             <Image
                                 src="/bioresonance/biophilia2.webp"
-                                alt="Биорезонансен анализ на организма в ТеКрего Русе"
+                                alt="Биорезонансен анализ на организма в ТеКрегО Русе"
                                 fill
                                 sizes="(max-width: 768px) 50vw, 40vw"
                                 className="object-cover"
@@ -258,7 +258,7 @@ export default function BioresonancePage() {
                     <AnimateOnScroll direction="none">
                         <div className="bg-card rounded-2xl p-8 md:p-10 border border-border/50 shadow-card">
                             <h2 className="font-serif text-2xl md:text-3xl font-semibold text-foreground mb-4 text-center">
-                                Холистичен подход в ТеКрего
+                                Холистичен подход в ТеКрегО
                             </h2>
                             <p className="text-muted-foreground leading-relaxed mb-4">
                                 В моята практика биорезонансът не е самостоятелна процедура, а част от цялостен холистичен подход. 
@@ -267,7 +267,7 @@ export default function BioresonancePage() {
                             </p>
                             <p className="text-muted-foreground leading-relaxed">
                                 Вярвам, че всяко тяло носи собствена интелигентност. Когато се научим да слушаме неговия език – 
-                                чрез честота, структура и реакция – започва истинската грижа за себе си. Биорезонансът в ТеКрего 
+                                чрез честота, структура и реакция – започва истинската грижа за себе си. Биорезонансът в ТеКрегО 
                                 е инструмент за осъзнаване, профилактика и подкрепа по пътя към баланс и вътрешна хармония.
                             </p>
                         </div>
@@ -287,7 +287,7 @@ export default function BioresonancePage() {
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <Button variant="cta" size="lg" asChild>
-                                <a href={`tel:${siteConfig.business.phoneClean}`}>
+                                <a href="tel:+359877225535">
                                     <Phone className="w-5 h-5 mr-2" />
                                     Запази час
                                 </a>

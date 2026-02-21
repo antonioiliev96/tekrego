@@ -18,9 +18,9 @@ const TrustBadge = ({ badge, className }: TrustBadgeProps) => {
       <div className="w-14 h-14 rounded-full bg-accent flex items-center justify-center mx-auto mb-4">
         <IconComponent className="w-7 h-7 text-accent-foreground" />
       </div>
-      <h3 className="font-serif text-lg font-semibold text-foreground mb-2">
+      <p className="font-serif text-lg font-semibold text-foreground mb-2">
         {badge.title}
-      </h3>
+      </p>
       <p className="text-sm text-muted-foreground">{badge.description}</p>
     </div>
   );

@@ -3,4 +3,4 @@ Allow: /
 Disallow: /api/
 Disallow: /_next/
 
-Sitemap: https://tekrego.vercel.app/sitemap.xml
+Sitemap: https://tekrego.com/sitemap.xml

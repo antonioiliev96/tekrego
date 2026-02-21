@@ -37,7 +37,7 @@ const TeamSection = () => {
               <div className="relative h-80 md:h-96 overflow-hidden flex-shrink-0">
                 <Image
                   src={member.photo}
-                  alt={`${member.name} - ${member.role.split('|')[0].trim()} в ТеКрего Русе`}
+                  alt={`${member.name} - ${member.role.split('|')[0].trim()} в ТеКрегО Русе`}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   quality={80}

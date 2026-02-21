@@ -81,7 +81,7 @@ const practiceDetails = [
     {
         question: "Как протича сеансът?",
         answer:
-            "Юмейхо терапията се провежда на специална постелка на пода. Пациентът е облечен в удобни дрехи. Терапевтът използва ръце, лакти и колене за прилагане на натиск и мобилизация. Сеансът продължава около 60 минути.",
+            "Юмейхо терапията се провежда на специална постелка на пода. Пациентът е облечен в удобни дрехи. Терапевтът използва ръце, лакти и колене за прилагане на натиск и мобилизация.",
     },
     {
         question: "Колко сеанса са необходими?",
@@ -91,7 +91,7 @@ const practiceDetails = [
     {
         question: "Има ли противопоказания?",
         answer:
-            "Юмейхо не се препоръчва при бременност, остеопороза, скорошни операции или фрактури, онкологични заболявания в активна фаза и остри възпалителни процеси. Винаги информирайте терапевта за здравословното си състояние.",
+            "Юмейхо не се препоръчва при скорошни операции или пресни фрактури. Винаги информирайте терапевта за здравословното си състояние.",
     },
 ];
 
@@ -159,7 +159,7 @@ export default function YumeihoPage() {
                         <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
                             <Image
                                 src="/yumeiho/yumeiho.webp"
-                                alt="Юмейхо терапия - балансиране на таза в ТеКрего"
+                                alt="Юмейхо терапия - балансиране на таза в ТеКрегО"
                                 fill
                                 sizes="(max-width: 768px) 50vw, 33vw"
                                 className="object-cover"
@@ -284,7 +284,7 @@ export default function YumeihoPage() {
                         <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
                             <Image
                                 src="/yumeiho/yumeiho5.webp"
-                                alt="Юмейхо терапия сеанс в ТеКрего"
+                                alt="Юмейхо терапия сеанс в ТеКрегО"
                                 fill
                                 sizes="(max-width: 768px) 50vw, 33vw"
                                 className="object-cover"
@@ -345,7 +345,7 @@ export default function YumeihoPage() {
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <Button variant="cta" size="lg" asChild>
-                                <a href={`tel:${siteConfig.business.phoneClean}`}>
+                                <a href="tel:+359877225535">
                                     <Phone className="w-5 h-5 mr-2" />
                                     Запази час
                                 </a>

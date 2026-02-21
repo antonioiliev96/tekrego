@@ -28,7 +28,7 @@ export default function ServicesPage() {
             <PageHeader
                 subtitle="Услуги"
                 title="Нашите терапии и масажи"
-                description="Всяка процедура в ТеКрего е съобразена с вашето състояние и нужди. Открийте подходящата за вас терапия."
+                description="Всяка процедура в ТеКрегО е съобразена с вашето състояние и нужди. Открийте подходящата за вас терапия."
             />
 
             {/* Services List */}
@@ -136,7 +136,7 @@ export default function ServicesPage() {
                                         <div className="px-6 md:px-8 pb-6 pt-2 border-t border-border/50">
                                             <div className="flex flex-wrap gap-3">
                                                 <Button variant="cta" size="sm" asChild>
-                                                    <a href={`tel:${siteConfig.business.phoneClean}`}>
+                                                    <a href={`tel:${(service as any).bookingPhone || siteConfig.business.phoneClean}`}>
                                                         <Phone className="w-4 h-4 mr-2" />
                                                         Запази час
                                                     </a>
