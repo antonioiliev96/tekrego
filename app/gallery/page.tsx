@@ -29,6 +29,10 @@ export default function GalleryPage() {
                                 alt={image.alt}
                                 width={600}
                                 height={400}
+                                sizes="(max-width: 768px) 50vw, 33vw"
+                                quality={80}
+                                loading={index < 3 ? "eager" : "lazy"}
+                                priority={index < 3}
                                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
                             />
                             {/* Overlay */}

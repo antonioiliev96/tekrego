@@ -28,6 +28,8 @@ const GalleryGrid = ({ images, className }: GalleryGridProps) => {
             alt={image.alt}
             fill
             sizes="(max-width: 768px) 50vw, 33vw"
+            quality={80}
+            loading="lazy"
             className="object-cover transition-transform duration-500 group-hover:scale-110"
           />
           {/* Overlay with caption */}

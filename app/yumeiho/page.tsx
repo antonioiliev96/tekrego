@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Section from "@/components/ui/Section";
 import PageHeader from "@/components/ui/PageHeader";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
@@ -151,8 +152,47 @@ export default function YumeihoPage() {
                 </div>
             </Section>
 
+            {/* Image Showcase */}
+            <Section variant="alt" className="!py-0">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 max-w-5xl mx-auto py-12">
+                    <AnimateOnScroll direction="up" delay={0}>
+                        <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                            <Image
+                                src="/yumeiho/yumeiho.webp"
+                                alt="Юмейхо терапия - балансиране на таза в ТеКрего"
+                                fill
+                                sizes="(max-width: 768px) 50vw, 33vw"
+                                className="object-cover"
+                            />
+                        </div>
+                    </AnimateOnScroll>
+                    <AnimateOnScroll direction="up" delay={100}>
+                        <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                            <Image
+                                src="/yumeiho/yumeiho2.webp"
+                                alt="Юмейхо терапия - мобилизация на гръбначния стълб"
+                                fill
+                                sizes="(max-width: 768px) 50vw, 33vw"
+                                className="object-cover"
+                            />
+                        </div>
+                    </AnimateOnScroll>
+                    <AnimateOnScroll direction="up" delay={200}>
+                        <div className="relative aspect-[4/3] rounded-xl overflow-hidden hidden md:block">
+                            <Image
+                                src="/yumeiho/yumeiho3.webp"
+                                alt="Юмейхо терапия - акупресура и енергийна работа"
+                                fill
+                                sizes="33vw"
+                                className="object-cover"
+                            />
+                        </div>
+                    </AnimateOnScroll>
+                </div>
+            </Section>
+
             {/* Benefits Section */}
-            <Section variant="alt">
+            <Section>
                 <div className="max-w-5xl mx-auto">
                     <AnimateOnScroll direction="none">
                         <div className="text-center mb-12">
@@ -223,6 +263,45 @@ export default function YumeihoPage() {
                             </AnimateOnScroll>
                         ))}
                     </div>
+                </div>
+            </Section>
+
+            {/* Second Image Row */}
+            <Section className="!py-0">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 max-w-5xl mx-auto py-12">
+                    <AnimateOnScroll direction="up" delay={0}>
+                        <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                            <Image
+                                src="/yumeiho/yumeiho4.webp"
+                                alt="Юмейхо терапия - работа с таза"
+                                fill
+                                sizes="(max-width: 768px) 50vw, 33vw"
+                                className="object-cover"
+                            />
+                        </div>
+                    </AnimateOnScroll>
+                    <AnimateOnScroll direction="up" delay={100}>
+                        <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                            <Image
+                                src="/yumeiho/yumeiho5.webp"
+                                alt="Юмейхо терапия сеанс в ТеКрего"
+                                fill
+                                sizes="(max-width: 768px) 50vw, 33vw"
+                                className="object-cover"
+                            />
+                        </div>
+                    </AnimateOnScroll>
+                    <AnimateOnScroll direction="up" delay={200}>
+                        <div className="relative aspect-[4/3] rounded-xl overflow-hidden hidden md:block">
+                            <Image
+                                src="/yumeiho/yumeiho6.webp"
+                                alt="Юмейхо терапия - дълбоко възстановяване"
+                                fill
+                                sizes="33vw"
+                                className="object-cover"
+                            />
+                        </div>
+                    </AnimateOnScroll>
                 </div>
             </Section>
 

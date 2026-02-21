@@ -22,46 +22,22 @@ export const metadata: Metadata = {
         statusBarStyle: "default",
         capable: true,
     },
-    verification: {
-        google: "your-google-verification-code",
-    },
-    other: {
-        "google-site-verification": "your-google-verification-code",
-    },
+    other: {},
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="bg" suppressHydrationWarning className={`${inter.variable} ${libreCaslonText.variable} ${roboto.variable} ${robotoMono.variable} ${cormorantGaramond.variable}`}>
             <head>
-                {/* Additional Open Graph meta tags for better social media sharing */}
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
                 <meta property="og:image:type" content="image/png" />
                 <meta property="og:image:alt" content="Юмейхо център ТекрегО - Професионални масажи в Русе" />
-                
-                {/* Facebook specific meta tags */}
-                <meta property="fb:app_id" content="your-facebook-app-id" />
-                
-                {/* Additional Twitter meta tags */}
                 <meta name="twitter:image:alt" content="Юмейхо център ТекрегО - Професионални масажи в Русе" />
-                
-                {/* WhatsApp and Telegram specific meta tags */}
                 <meta property="og:image:secure_url" content={`${siteConfig.seo.siteUrl}/og-image.png`} />
-                
-                {/* LinkedIn specific meta tags */}
                 <meta property="og:site_name" content={siteConfig.business.name} />
-                
-                {/* Viber specific meta tags */}
-                <meta name="viber:sharing:image" content={`${siteConfig.seo.siteUrl}/og-image.png`} />
-                
-                {/* General meta tags for better SEO */}
                 <meta name="theme-color" content="#1f2937" />
                 <meta name="msapplication-TileColor" content="#1f2937" />
-                <meta name="msapplication-TileImage" content="/og-image.png" />
-                
-                {/* Preload the OG image for faster loading */}
-                <link rel="preload" href="/og-image.png" as="image" type="image/png" />
             </head>
             <body>
                 <Providers>

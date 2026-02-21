@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Section from "@/components/ui/Section";
 import PageHeader from "@/components/ui/PageHeader";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
@@ -148,8 +149,36 @@ export default function BioresonancePage() {
                 </div>
             </Section>
 
+            {/* Image Showcase */}
+            <Section variant="alt" className="!py-0">
+                <div className="grid grid-cols-2 gap-3 md:gap-4 max-w-3xl mx-auto py-12">
+                    <AnimateOnScroll direction="up" delay={0}>
+                        <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                            <Image
+                                src="/bioresonance/boiphilia.webp"
+                                alt="Биорезонансна диагностика с апарат Biophilia в ТеКрего"
+                                fill
+                                sizes="(max-width: 768px) 50vw, 40vw"
+                                className="object-cover"
+                            />
+                        </div>
+                    </AnimateOnScroll>
+                    <AnimateOnScroll direction="up" delay={100}>
+                        <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                            <Image
+                                src="/bioresonance/biophilia2.webp"
+                                alt="Биорезонансен анализ на организма в ТеКрего Русе"
+                                fill
+                                sizes="(max-width: 768px) 50vw, 40vw"
+                                className="object-cover"
+                            />
+                        </div>
+                    </AnimateOnScroll>
+                </div>
+            </Section>
+
             {/* What Includes Section */}
-            <Section variant="alt">
+            <Section>
                 <div className="max-w-5xl mx-auto">
                     <AnimateOnScroll direction="none">
                         <div className="text-center mb-12">

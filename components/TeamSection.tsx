@@ -37,10 +37,11 @@ const TeamSection = () => {
               <div className="relative h-80 md:h-96 overflow-hidden flex-shrink-0">
                 <Image
                   src={member.photo}
-                  alt={member.name}
+                  alt={`${member.name} - ${member.role.split('|')[0].trim()} в ТеКрего Русе`}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  quality={80}
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
                 />
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />

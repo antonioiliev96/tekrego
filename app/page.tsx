@@ -38,13 +38,15 @@ export default function HomePage() {
             <section className="relative min-h-[90vh] flex items-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/assets/hero-studio.jpg"
-                        alt="Масажно студио в Русе - уютна обстановка"
+                        src="/massage/massage4.webp"
+                        alt="Юмейхо център ТеКрего - професионални масажи и терапии в Русе"
                         fill
+                        sizes="100vw"
                         className="object-cover"
                         priority
+                        quality={85}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-l from-background/90 via-background/85 to-background/70" />
                 </div>
 
                 <div className="container-wide relative z-10 py-20 md:py-32">

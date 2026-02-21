@@ -8,10 +8,11 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary text-primary-foreground relative overflow-hidden">
+    <footer className="bg-primary text-primary-foreground relative overflow-hidden" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 500px' }}>
       {/* Decorative pattern - concentric circles */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 pointer-events-none"
+        aria-hidden="true"
         style={{
           backgroundImage: `repeating-radial-gradient(circle at 50% 50%, transparent 0px, transparent 2px, hsl(0 0% 100% / 0.12) 2px, hsl(0 0% 100% / 0.12) 3px, transparent 3px, transparent 10px)`,
           backgroundSize: '36px 36px',

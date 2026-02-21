@@ -21,6 +21,7 @@ const Header = () => {
               alt={siteConfig.business.name}
               width={140}
               height={64}
+              priority
               className="h-14 md:h-16 w-auto object-contain object-left"
             />
             {/* <span className="font-serif text-xl md:text-2xl font-semibold text-primary hidden sm:inline">
