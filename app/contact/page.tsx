@@ -7,6 +7,7 @@ import { siteConfig } from "@/content/siteContent";
 import { contactMetadata } from "@/lib/metadata";
 import { Phone, Mail, MapPin, Clock, MessageCircle, Navigation } from "lucide-react";
 import { FacebookIcon, InstagramIcon } from "@/components/icons/SocialIcons";
+import LazyMap from "@/components/LazyMap";
 
 export const metadata: Metadata = contactMetadata;
 
@@ -129,18 +130,11 @@ export default function ContactPage() {
                         <h2 className="font-serif text-2xl font-semibold text-foreground mb-8">
                             Къде да ни намерите
                         </h2>
-                        <div className="rounded-xl overflow-hidden shadow-card border border-border/50 aspect-[4/3]">
-                            <iframe
-                                src={siteConfig.business.links.googleMapsEmbed}
-                                width="100%"
-                                height="100%"
-                                style={{ border: 0 }}
-                                allowFullScreen
-                                loading="lazy"
-                                referrerPolicy="no-referrer-when-downgrade"
-                                title="Местоположение на масажното студио"
-                            />
-                        </div>
+                        <LazyMap
+                            src={siteConfig.business.links.googleMapsEmbed}
+                            className="rounded-xl overflow-hidden shadow-card border border-border/50 aspect-[4/3]"
+                            title="Местоположение на масажното студио"
+                        />
                         <div className="mt-6 p-4 rounded-xl bg-cream-dark">
                             <h3 className="font-serif text-lg font-semibold text-foreground mb-2">
                                 Как да ни намерите
