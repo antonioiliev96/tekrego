@@ -1,22 +1,59 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import { siteConfig } from "@/content/siteContent";
 import { Phone, MapPin, Clock, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ContactPreview = () => {
+  const mapContainerRef = useRef<HTMLDivElement | null>(null);
+  const [shouldLoadMap, setShouldLoadMap] = useState(false);
+
+  useEffect(() => {
+    if (shouldLoadMap) return;
+    const el = mapContainerRef.current;
+    if (!el) return;
+
+    if (typeof IntersectionObserver === "undefined") {
+      setShouldLoadMap(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setShouldLoadMap(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "250px 0px" }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [shouldLoadMap]);
+
   return (
     <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
       {/* Map */}
-      <div className="aspect-video md:aspect-auto md:min-h-[400px] rounded-xl overflow-hidden shadow-soft">
-        <iframe
-          src={siteConfig.business.links.googleMapsEmbed}
-          width="100%"
-          height="100%"
-          style={{ border: 0, minHeight: "100%" }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Местоположение на масажното студио"
-        />
+      <div
+        ref={mapContainerRef}
+        className="aspect-video md:aspect-auto md:min-h-[400px] rounded-xl overflow-hidden shadow-soft"
+      >
+        {shouldLoadMap ? (
+          <iframe
+            src={siteConfig.business.links.googleMapsEmbed}
+            width="100%"
+            height="100%"
+            style={{ border: 0, minHeight: "100%" }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Местоположение на масажното студио"
+          />
+        ) : (
+          <div className="w-full h-full bg-muted" />
+        )}
       </div>
 
       {/* Contact Info */}
