@@ -8,6 +8,7 @@ import { defaultMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/content/siteContent";
 import "@/app/globals.css";
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
     ...defaultMetadata,
@@ -48,6 +49,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                         <Footer />
                     </div>
                 </Providers>
+                <Analytics />
             </body>
         </html>
     );
