@@ -23,23 +23,36 @@ export const metadata: Metadata = {
         statusBarStyle: "default",
         capable: true,
     },
-    other: {},
+    openGraph: {
+        ...defaultMetadata.openGraph,
+        siteName: siteConfig.business.name,
+        images: [
+            {
+                url: `${siteConfig.seo.siteUrl}/og-image.png`,
+                width: 1200,
+                height: 630,
+                alt: "Юмейхо център ТеКрегО - Професионални масажи в Русе",
+                type: "image/png",
+                secureUrl: `${siteConfig.seo.siteUrl}/og-image.png`,
+            }
+        ],
+    },
+    twitter: {
+        ...defaultMetadata.twitter,
+        images: {
+            url: `${siteConfig.seo.siteUrl}/og-image.png`,
+            alt: "Юмейхо център ТеКрегО - Професионални масажи в Русе",
+        },
+    },
+    other: {
+        "theme-color": "#1f2937",
+        "msapplication-TileColor": "#1f2937",
+    },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="bg" suppressHydrationWarning className={`${inter.variable} ${libreCaslonText.variable} ${roboto.variable} ${robotoMono.variable} ${cormorantGaramond.variable}`}>
-            <head>
-                <meta property="og:image:width" content="1200" />
-                <meta property="og:image:height" content="630" />
-                <meta property="og:image:type" content="image/png" />
-                <meta property="og:image:alt" content="Юмейхо център ТеКрегО - Професионални масажи в Русе" />
-                <meta name="twitter:image:alt" content="Юмейхо център ТеКрегО - Професионални масажи в Русе" />
-                <meta property="og:image:secure_url" content={`${siteConfig.seo.siteUrl}/og-image.png`} />
-                <meta property="og:site_name" content={siteConfig.business.name} />
-                <meta name="theme-color" content="#1f2937" />
-                <meta name="msapplication-TileColor" content="#1f2937" />
-            </head>
             <body>
                 <Providers>
                     <LocalBusinessSchema />
