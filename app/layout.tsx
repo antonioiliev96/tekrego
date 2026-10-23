@@ -9,6 +9,8 @@ import { siteConfig } from "@/content/siteContent";
 import "@/app/globals.css";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
+import { PrismicPreview } from "@prismicio/next";
+import { repositoryName } from "@/prismicio";
 
 export const metadata: Metadata = {
     ...defaultMetadata,
@@ -63,6 +65,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     </div>
                 </Providers>
                 <Analytics />
+                <PrismicPreview repositoryName={repositoryName} />
             </body>
         </html>
     );

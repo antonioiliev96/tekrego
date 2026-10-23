@@ -105,6 +105,7 @@ export const siteConfig = {
       { label: "Юмейхо", href: "/yumeiho" },
       { label: "Биорезонанс", href: "/bioresonance" },
       { label: "Галерия", href: "/gallery" },
+      { label: "Блог", href: "/blog" },
       { label: "Контакти", href: "/contact" },
     ],
     footer: [

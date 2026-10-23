@@ -168,6 +168,28 @@ export default {
 				'50%': { transform: 'translate(40%, 30%) scale(0.8)', opacity: '0.7' },
 			},
 		},
+		typography: {
+			DEFAULT: {
+				css: {
+					'--tw-prose-body': 'hsl(var(--foreground))',
+					'--tw-prose-headings': 'hsl(var(--foreground))',
+					'--tw-prose-lead': 'hsl(var(--muted-foreground))',
+					'--tw-prose-links': 'hsl(var(--primary))',
+					'--tw-prose-bold': 'hsl(var(--foreground))',
+					'--tw-prose-counters': 'hsl(var(--primary))',
+					'--tw-prose-bullets': 'hsl(var(--primary) / 0.6)',
+					'--tw-prose-hr': 'hsl(var(--border))',
+					'--tw-prose-quotes': 'hsl(var(--foreground))',
+					'--tw-prose-quote-borders': 'hsl(var(--primary) / 0.4)',
+					'--tw-prose-captions': 'hsl(var(--muted-foreground))',
+					'--tw-prose-code': 'hsl(var(--foreground))',
+					'--tw-prose-pre-code': 'hsl(var(--secondary-foreground))',
+					'--tw-prose-pre-bg': 'hsl(var(--secondary))',
+					a: { textUnderlineOffset: '3px' },
+					img: { borderRadius: 'var(--radius)' },
+				},
+			},
+		},
 		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
@@ -182,5 +204,5 @@ export default {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;

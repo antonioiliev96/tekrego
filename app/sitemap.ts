@@ -1,8 +1,10 @@
 import { MetadataRoute } from 'next'
 import { siteConfig } from '@/content/siteContent'
+import { createClient } from '@/prismicio'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = siteConfig.seo.siteUrl
+  const posts = await createClient().getAllByType('blog_post')
 
   return [
     {
@@ -41,6 +43,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.6,
     },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    ...posts.map((post) => ({
+      url: `${baseUrl}/blog/${post.uid}`,
+      lastModified: new Date(post.last_publication_date),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
     {
       url: `${baseUrl}/privacy`,
       lastModified: new Date(),

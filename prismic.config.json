@@ -1,0 +1,9 @@
+{
+  "repositoryName": "aj2hfxsm",
+  "routes": [
+    {
+      "type": "blog_post",
+      "path": "/blog/:uid"
+    }
+  ]
+}
