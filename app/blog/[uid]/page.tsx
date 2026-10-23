@@ -80,7 +80,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
                         <div className="flex flex-wrap items-center gap-3 mt-6 mb-4 text-sm">
                             {category && (
-                                <span className="inline-flex items-center rounded-full bg-accent text-accent-foreground px-3 py-1 text-xs font-semibold">
+                                <span className="inline-flex items-center rounded-full bg-primary/10 text-accent-foreground px-3 py-1 text-xs font-semibold">
                                     {category}
                                 </span>
                             )}
@@ -108,7 +108,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
                 <div className="container-narrow py-12 md:py-16">
                     {isFilled.richText(post.data.body) && (
-                        <div className="prose prose-lg max-w-none">
+                        <div className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:font-semibold">
                             <PrismicRichText field={post.data.body} linkResolver={linkResolver} />
                         </div>
                     )}
