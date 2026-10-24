@@ -18,15 +18,20 @@ type BlogPostPageProps = {
     params: Promise<{ uid: string }>;
 };
 
+// One cached, tag-revalidated query serves every post URL. Looking the UID up
+// in it means a request for an unknown /blog/<uid> makes no Prismic API call.
+async function getAllPosts() {
+    return createClient().getAllByType("blog_post", { orderings: [...POSTS_ORDERING] });
+}
+
 async function getPost(uid: string) {
-    const client = createClient();
-    return client.getByUID("blog_post", uid).catch(() => notFound());
+    const posts = await getAllPosts();
+    return { post: posts.find((p) => p.uid === uid) ?? notFound(), posts };
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const { uid } = await params;
-    const post = await getPost(uid);
-    const client = createClient();
+    const { post, posts } = await getPost(uid);
 
     const title = asText(post.data.title);
     const date = formatDate(post.data.publication_date);
@@ -35,9 +40,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const postUrl = `${SITE_URL}/blog/${uid}`;
 
     // Related posts: same category first, then the most recent.
-    const others = (await client.getAllByType("blog_post", { orderings: [...POSTS_ORDERING] })).filter(
-        (p) => p.uid !== uid
-    );
+    const others = posts.filter((p) => p.uid !== uid);
     const sameCategory = category ? others.filter((p) => p.data.category === category) : [];
     const related = [...sameCategory, ...others.filter((p) => !sameCategory.includes(p))].slice(0, 3);
 
@@ -134,7 +137,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
     const { uid } = await params;
-    const post = await getPost(uid);
+    const { post } = await getPost(uid);
     const title = asText(post.data.title);
 
     return buildMetadata({
@@ -147,8 +150,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 }
 
 export async function generateStaticParams() {
-    const client = createClient();
-    const posts = await client.getAllByType("blog_post");
+    const posts = await getAllPosts();
 
     return posts.map((post) => ({ uid: post.uid }));
 }

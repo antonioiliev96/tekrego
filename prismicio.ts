@@ -45,9 +45,14 @@ export const linkResolver: LinkResolverFunction = (doc) => {
  */
 export const createClient = (config: ClientConfig = {}) => {
 	const client = baseCreateClient(repositoryName, {
+		// Server-only: lets the repository's API stay private, so nobody can
+		// spend the Free plan's API quota by querying Prismic directly.
+		accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+		// The daily revalidate is a safety net: if one webhook call fails, content
+		// still refreshes within a day instead of waiting for the next deploy.
 		fetchOptions:
 			process.env.NODE_ENV === 'production'
-				? { next: { tags: ['prismic'] }, cache: 'force-cache' }
+				? { next: { tags: ['prismic'], revalidate: 86400 } }
 				: { next: { revalidate: 5 } },
 		...config,
 	});
