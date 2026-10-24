@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Section from "@/components/ui/Section";
 import PageHeader from "@/components/ui/PageHeader";
 import BlogExplorer from "@/components/blog/BlogExplorer";
-import { createClient } from "@/prismicio";
-import { POSTS_ORDERING, toBlogCard } from "@/lib/blog";
+import { toBlogCard } from "@/lib/blog";
+import { getPostCards } from "@/lib/blog-queries";
 import { generateMetadata as buildMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/content/siteContent";
 
@@ -14,10 +14,7 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default async function BlogPage() {
-    const client = createClient();
-    const posts = await client.getAllByType("blog_post", {
-        orderings: [...POSTS_ORDERING],
-    });
+    const posts = await getPostCards();
 
     return (
         <>

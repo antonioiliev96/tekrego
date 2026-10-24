@@ -5,6 +5,7 @@ interface OpenGraphConfig {
   title?: string;
   description?: string;
   image?: string;
+  imageType?: string;
   url?: string;
   type?: "website" | "article";
 }
@@ -14,6 +15,7 @@ export function generateMetadata(config: OpenGraphConfig = {}): Metadata {
     title = siteConfig.seo.defaultTitle,
     description = siteConfig.seo.defaultDescription,
     image = "/og-image.png",
+    imageType = "image/png",
     url = siteConfig.seo.siteUrl,
     type = "website"
   } = config;
@@ -52,7 +54,7 @@ export function generateMetadata(config: OpenGraphConfig = {}): Metadata {
           width: 1200,
           height: 630,
           alt: `${siteConfig.business.name} - ${description}`,
-          type: "image/png",
+          type: imageType,
         }
       ],
     },

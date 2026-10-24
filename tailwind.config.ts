@@ -174,7 +174,7 @@ export default {
 					'--tw-prose-body': 'hsl(var(--foreground))',
 					'--tw-prose-headings': 'hsl(var(--foreground))',
 					'--tw-prose-lead': 'hsl(var(--muted-foreground))',
-					'--tw-prose-links': 'hsl(var(--primary))',
+					'--tw-prose-links': 'hsl(var(--accent-foreground))',
 					'--tw-prose-bold': 'hsl(var(--foreground))',
 					'--tw-prose-counters': 'hsl(var(--primary))',
 					'--tw-prose-bullets': 'hsl(var(--primary) / 0.6)',

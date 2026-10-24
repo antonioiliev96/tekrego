@@ -14,11 +14,11 @@ type CategoryFilter = BlogCategory | "all";
 
 const pillClass = (active: boolean) =>
   cn(
-    "inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-colors",
+    "inline-flex shrink-0 snap-start items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-colors",
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background",
     active
-      ? "bg-primary border-primary text-primary-foreground"
-      : "bg-card border-border text-foreground hover:border-primary/40 hover:text-primary"
+      ? "bg-accent-foreground border-accent-foreground text-primary-foreground"
+      : "bg-card border-border text-foreground hover:border-primary/40 hover:text-accent-foreground"
   );
 
 export default function BlogExplorer({ posts }: { posts: BlogCardData[] }) {
@@ -45,9 +45,14 @@ export default function BlogExplorer({ posts }: { posts: BlogCardData[] }) {
     });
   }, [posts, query, category]);
 
-  const pageCount = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  // The newest post leads the unfiltered list; filtered results stay a plain grid.
+  const showLead = category === "all" && !query.trim() && filtered.length > 0;
+  const lead = showLead ? filtered[0] : null;
+  const gridPosts = showLead ? filtered.slice(1) : filtered;
+
+  const pageCount = Math.max(1, Math.ceil(gridPosts.length / PAGE_SIZE));
   const currentPage = Math.min(page, pageCount);
-  const visible = filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+  const visible = gridPosts.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
 
   const goToPage = (next: number) => {
     setPage(next);
@@ -75,26 +80,33 @@ export default function BlogExplorer({ posts }: { posts: BlogCardData[] }) {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" aria-hidden="true" />
           <Input
             type="search"
+            name="q"
+            autoComplete="off"
             value={query}
             onChange={(e) => {
               setQuery(e.target.value);
               setPage(1);
             }}
-            placeholder="Търсене в статиите..."
+            placeholder="Търсене в статиите…"
             aria-label="Търсене в статиите"
             className="pl-9 h-11 rounded-full bg-card"
           />
         </div>
 
-        <div role="group" aria-label="Филтър по тема" className="flex flex-wrap justify-center gap-2">
+        {/* One swipeable row on phones, centred and wrapped from md up. */}
+        <div
+          role="group"
+          aria-label="Филтър по тема"
+          className="flex gap-2 overflow-x-auto snap-x pb-2 -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 md:pb-0 md:flex-wrap md:justify-center md:overflow-visible"
+        >
           <button type="button" aria-pressed={category === "all"} onClick={() => selectCategory("all")} className={pillClass(category === "all")}>
             Всички
-            <span className="text-xs opacity-70">{posts.length}</span>
+            <span className="text-xs opacity-80 tabular-nums">{posts.length}</span>
           </button>
           {CATEGORIES.map((c) => (
             <button key={c} type="button" aria-pressed={category === c} onClick={() => selectCategory(c)} className={pillClass(category === c)}>
               {c}
-              <span className="text-xs opacity-70">{counts[c]}</span>
+              <span className="text-xs opacity-80 tabular-nums">{counts[c]}</span>
             </button>
           ))}
         </div>
@@ -104,18 +116,22 @@ export default function BlogExplorer({ posts }: { posts: BlogCardData[] }) {
         {filtered.length === 1 ? "Намерена е 1 статия" : `Намерени са ${filtered.length} статии`}
       </p>
 
+      {lead && currentPage === 1 && <BlogCard post={lead} variant="lead" priority className="mb-6 md:mb-8" />}
+
       {visible.length > 0 ? (
         <ul className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {visible.map((post) => (
+          {visible.map((post, i) => (
             <li key={post.id}>
-              <BlogCard post={post} />
+              <BlogCard post={post} priority={!lead && currentPage === 1 && i < 3} />
             </li>
           ))}
         </ul>
       ) : (
-        <p className="text-center text-muted-foreground py-12">
-          Няма статии, които отговарят на търсенето.
-        </p>
+        !lead && (
+          <p className="text-center text-muted-foreground py-12">
+            Няма статии, които отговарят на търсенето. Опитайте с друга дума или изберете „Всички“.
+          </p>
+        )
       )}
 
       {pageCount > 1 && (
@@ -131,6 +147,7 @@ export default function BlogExplorer({ posts }: { posts: BlogCardData[] }) {
               onClick={() => goToPage(n)}
               aria-current={n === currentPage ? "page" : undefined}
               aria-label={`Страница ${n}`}
+              className={cn("tabular-nums", n === currentPage && "bg-accent-foreground hover:bg-accent-foreground/90")}
             >
               {n}
             </Button>

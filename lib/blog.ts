@@ -19,6 +19,19 @@ export const POSTS_ORDERING = [
   { field: "my.blog_post.publication_date", direction: "desc" },
 ] as const;
 
+export const CARD_FIELDS = [
+  "title",
+  "publication_date",
+  "category",
+  "cover_image",
+  "excerpt",
+] as const satisfies readonly (keyof BlogPostDocument["data"])[];
+
+/** A post as returned by the card query: only CARD_FIELDS are in `data`. */
+export type BlogPostCard = Omit<BlogPostDocument, "data"> & {
+  data: Pick<BlogPostDocument["data"], (typeof CARD_FIELDS)[number]>;
+};
+
 export type BlogCardData = {
   id: string;
   uid: string;
@@ -40,7 +53,23 @@ export function formatDate(date: string | null | undefined) {
   }).format(d);
 }
 
-export function toBlogCard(post: BlogPostDocument): BlogCardData {
+/**
+ * Return a JPEG of an exact size, for social previews and structured data.
+ *
+ * Prismic serves images through imgix, where `auto=format` overrides `fm`, so
+ * it is removed to get a predictable JPEG instead of AVIF/WebP.
+ */
+export function cropImageUrl(url: string, width: number, height: number) {
+  const u = new URL(url);
+  u.searchParams.set("auto", "compress");
+  u.searchParams.set("fit", "crop");
+  u.searchParams.set("fm", "jpg");
+  u.searchParams.set("w", String(width));
+  u.searchParams.set("h", String(height));
+  return u.toString();
+}
+
+export function toBlogCard(post: BlogPostCard): BlogCardData {
   return {
     id: post.id,
     uid: post.uid,

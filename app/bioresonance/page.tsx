@@ -7,6 +7,7 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/content/siteContent";
 import { serviceMetadata } from "@/lib/metadata";
+import LatestPosts from "@/components/blog/LatestPosts";
 import {
     Phone,
     ArrowLeft,
@@ -274,6 +275,8 @@ export default function BioresonancePage() {
                     </AnimateOnScroll>
                 </div>
             </Section>
+
+            <LatestPosts title="Статии за биорезонанса" description="Научете повече за метода от нашия блог." category="Биорезонанс" />
 
             {/* CTA */}
             <Section>

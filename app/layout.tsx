@@ -11,6 +11,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
+import { draftMode } from "next/headers";
 
 export const metadata: Metadata = {
     ...defaultMetadata,
@@ -52,9 +53,16 @@ export const metadata: Metadata = {
     },
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
+    // The Prismic toolbar adds a script, an iframe and third-party cookies, so
+    // only editors in a preview session get it.
+    const { isEnabled: isPreview } = await draftMode();
+
     return (
         <html lang="bg" suppressHydrationWarning className={`${inter.variable} ${libreCaslonText.variable} ${roboto.variable} ${robotoMono.variable} ${cormorantGaramond.variable}`}>
+            <head>
+                <link rel="preconnect" href="https://images.prismic.io" />
+            </head>
             <body>
                 <Providers>
                     <LocalBusinessSchema />
@@ -65,7 +73,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     </div>
                 </Providers>
                 <Analytics />
-                <PrismicPreview repositoryName={repositoryName} />
+                {isPreview && <PrismicPreview repositoryName={repositoryName} />}
             </body>
         </html>
     );

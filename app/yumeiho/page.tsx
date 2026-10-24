@@ -7,6 +7,7 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/content/siteContent";
 import { serviceMetadata } from "@/lib/metadata";
+import LatestPosts from "@/components/blog/LatestPosts";
 import {
     Phone,
     ArrowLeft,
@@ -332,6 +333,8 @@ export default function YumeihoPage() {
                     </div>
                 </div>
             </Section>
+
+            <LatestPosts title="Статии за Юмейхо" description="Научете повече за терапията от нашия блог." category="Юмейхо терапия" />
 
             {/* CTA */}
             <Section>

@@ -11,6 +11,7 @@ import GalleryGrid from "@/components/GalleryGrid";
 import FAQAccordion from "@/components/FAQAccordion";
 import ContactPreview from "@/components/ContactPreview";
 import TeamSection from "@/components/TeamSection";
+import LatestPosts from "@/components/blog/LatestPosts";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { Button } from "@/components/ui/button";
 import {
@@ -167,6 +168,8 @@ export default function HomePage() {
                     </a>
                 </div>
             </Section>
+
+            <LatestPosts title="Последни статии" description="Полезно за Юмейхо терапията, масажите и грижата за тялото." />
 
             {/* ========== GALLERY ========== */}
             <Section>

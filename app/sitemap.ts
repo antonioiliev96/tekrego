@@ -1,12 +1,10 @@
 import { MetadataRoute } from 'next'
 import { siteConfig } from '@/content/siteContent'
-import { createClient } from '@/prismicio'
-import { POSTS_ORDERING } from '@/lib/blog'
+import { getPostCards } from '@/lib/blog-queries'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = siteConfig.seo.siteUrl
-  // Same query as /blog and /blog/[uid], so all three share one cached fetch.
-  const posts = await createClient().getAllByType('blog_post', { orderings: [...POSTS_ORDERING] })
+  const posts = await getPostCards()
 
   return [
     {
