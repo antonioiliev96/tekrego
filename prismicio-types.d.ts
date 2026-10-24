@@ -128,10 +128,10 @@ interface BlogPostDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/slices
 	 */
 	slices: prismic.SliceZone<BlogPostDocumentDataSlicesSlice>;/**
-	 * Meta Title field in *Blog Post*
+	 * SEO заглавие (до 35 знака) field in *Blog Post*
 	 *
 	 * - **Field Type**: Text
-	 * - **Placeholder**: A title of the page used for social media and search engines
+	 * - **Placeholder**: Ако е празно, се използва заглавието на статията
 	 * - **API ID Path**: blog_post.meta_title
 	 * - **Tab**: SEO & Metadata
 	 * - **Documentation**: https://prismic.io/docs/fields/text
@@ -139,10 +139,10 @@ interface BlogPostDocumentData {
 	meta_title: prismic.KeyTextField;
 	
 	/**
-	 * Meta Description field in *Blog Post*
+	 * SEO описание (до 155 знака) field in *Blog Post*
 	 *
 	 * - **Field Type**: Text
-	 * - **Placeholder**: A brief summary of the page
+	 * - **Placeholder**: Ако е празно, се използва краткото описание
 	 * - **API ID Path**: blog_post.meta_description
 	 * - **Tab**: SEO & Metadata
 	 * - **Documentation**: https://prismic.io/docs/fields/text
@@ -150,10 +150,10 @@ interface BlogPostDocumentData {
 	meta_description: prismic.KeyTextField;
 	
 	/**
-	 * Meta Image field in *Blog Post*
+	 * Снимка за споделяне (1200×630) field in *Blog Post*
 	 *
 	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
+	 * - **Placeholder**: Ако е празно, се използва корицата
 	 * - **API ID Path**: blog_post.meta_image
 	 * - **Tab**: SEO & Metadata
 	 * - **Documentation**: https://prismic.io/docs/fields/image

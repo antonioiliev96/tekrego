@@ -67,15 +67,15 @@
     "SEO & Metadata": {
       "meta_title": {
         "config": {
-          "label": "Meta Title",
-          "placeholder": "A title of the page used for social media and search engines"
+          "label": "SEO заглавие (до 35 знака)",
+          "placeholder": "Ако е празно, се използва заглавието на статията"
         },
         "type": "Text"
       },
       "meta_description": {
         "config": {
-          "label": "Meta Description",
-          "placeholder": "A brief summary of the page"
+          "label": "SEO описание (до 155 знака)",
+          "placeholder": "Ако е празно, се използва краткото описание"
         },
         "type": "Text"
       },
@@ -85,7 +85,8 @@
             "height": 1260,
             "width": 2400
           },
-          "label": "Meta Image",
+          "label": "Снимка за споделяне (1200×630)",
+          "placeholder": "Ако е празно, се използва корицата",
           "thumbnails": []
         },
         "type": "Image"
