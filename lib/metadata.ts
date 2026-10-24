@@ -76,11 +76,11 @@ export const defaultMetadata = generateMetadata();
 
 // Specific metadata for different page types. Titles stay short: the root
 // layout's title template appends the site name.
-export const serviceMetadata = (serviceName: string, serviceDescription: string) => 
+export const serviceMetadata = (serviceName: string, serviceDescription: string, path: string) =>
   generateMetadata({
     title: serviceName,
     description: serviceDescription,
-    url: `${siteConfig.seo.siteUrl}/services`,
+    url: `${siteConfig.seo.siteUrl}${path}`,
   });
 
 export const contactMetadata = generateMetadata({

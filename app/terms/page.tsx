@@ -6,6 +6,7 @@ import { siteConfig } from "@/content/siteContent";
 export const metadata: Metadata = {
     title: "Общи условия",
     description: `Общи условия за ползване на услугите на ${siteConfig.business.name}. Политика за записване и отмяна.`,
+    alternates: { canonical: "/terms" },
     robots: {
         index: false,
         follow: true,

@@ -5,6 +5,7 @@ import { siteConfig } from "@/content/siteContent";
 export const metadata: Metadata = {
     title: "Политика за поверителност",
     description: `Политика за поверителност на ${siteConfig.business.name}. Как събираме и обработваме лични данни.`,
+    alternates: { canonical: "/privacy" },
     robots: {
         index: false,
         follow: true,
