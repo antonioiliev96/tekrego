@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { siteConfig, teamMembers } from "@/content/siteContent";
 
 const founder = teamMembers[0];
+// Square head-and-shoulders crop of founder.photo; the full portrait puts the
+// face at the top edge of a round frame.
+const founderAvatar = "/team/vesi-avatar.jpg";
 
 const StudioCta = () => (
   <aside
@@ -12,7 +15,7 @@ const StudioCta = () => (
     className="mt-12 rounded-2xl border border-border bg-cream-dark p-6 md:p-8 flex flex-col sm:flex-row gap-6 sm:items-center"
   >
     <Image
-      src={founder.photo}
+      src={founderAvatar}
       alt={founder.name}
       width={112}
       height={112}
