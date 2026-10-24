@@ -56,7 +56,7 @@ interface BlogPostDocumentData {
 	 * Заглавие field in *Blog Post*
 	 *
 	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
+	 * - **Placeholder**: Заглавието на статията
 	 * - **API ID Path**: blog_post.title
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
@@ -67,7 +67,7 @@ interface BlogPostDocumentData {
 	 * Дата на публикуване field in *Blog Post*
 	 *
 	 * - **Field Type**: Date
-	 * - **Placeholder**: *None*
+	 * - **Placeholder**: Показва се на статията и подрежда списъка
 	 * - **API ID Path**: blog_post.publication_date
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/fields/date
@@ -78,7 +78,7 @@ interface BlogPostDocumentData {
 	 * Категория field in *Blog Post*
 	 *
 	 * - **Field Type**: Select
-	 * - **Placeholder**: *None*
+	 * - **Placeholder**: Изберете тема
 	 * - **API ID Path**: blog_post.category
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/fields/select
@@ -86,10 +86,10 @@ interface BlogPostDocumentData {
 	category: prismic.SelectField<"Юмейхо терапия" | "Масажи" | "Биорезонанс" | "Здраве и съвети" | "Новини и промоции">;
 	
 	/**
-	 * Корична снимка field in *Blog Post*
+	 * Снимка на корицата field in *Blog Post*
 	 *
 	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
+	 * - **Placeholder**: Хоризонтална снимка, поне 1600 px широка
 	 * - **API ID Path**: blog_post.cover_image
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/fields/image
@@ -100,7 +100,7 @@ interface BlogPostDocumentData {
 	 * Кратко описание field in *Blog Post*
 	 *
 	 * - **Field Type**: Text
-	 * - **Placeholder**: Кратко резюме, което се показва в списъка с публикации
+	 * - **Placeholder**: 1–2 изречения, които се показват в списъка със статии
 	 * - **API ID Path**: blog_post.excerpt
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/fields/text
@@ -111,7 +111,7 @@ interface BlogPostDocumentData {
 	 * Съдържание field in *Blog Post*
 	 *
 	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
+	 * - **Placeholder**: Текстът на статията: заглавия (H2, H3), списъци, връзки и снимки
 	 * - **API ID Path**: blog_post.body
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
