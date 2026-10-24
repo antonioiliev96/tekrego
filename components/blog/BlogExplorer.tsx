@@ -93,11 +93,12 @@ export default function BlogExplorer({ posts }: { posts: BlogCardData[] }) {
           />
         </div>
 
-        {/* One swipeable row on phones, centred and wrapped from md up. */}
+        {/* One swipeable row on phones, centred and wrapped from md up. scroll-px
+            matches px: without it, snapping pulls the first topic to the screen edge. */}
         <div
           role="group"
           aria-label="Филтър по тема"
-          className="flex gap-2 overflow-x-auto snap-x pb-2 -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 md:pb-0 md:flex-wrap md:justify-center md:overflow-visible"
+          className="flex gap-2 overflow-x-auto snap-x pb-2 -mx-4 px-4 scroll-px-4 sm:-mx-6 sm:px-6 sm:scroll-px-6 md:mx-0 md:px-0 md:scroll-px-0 md:pb-0 md:flex-wrap md:justify-center md:overflow-visible"
         >
           <button type="button" aria-pressed={category === "all"} onClick={() => selectCategory("all")} className={pillClass(category === "all")}>
             Всички
