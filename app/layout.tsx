@@ -3,7 +3,7 @@ import { Providers } from "@/components/Providers";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { LocalBusinessSchema } from "@/components/SEO";
-import { inter, libreCaslonText, roboto, robotoMono, cormorantGaramond } from "@/lib/fonts";
+import { roboto, cormorantGaramond } from "@/lib/fonts";
 import { defaultMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/content/siteContent";
 import "@/app/globals.css";
@@ -59,7 +59,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     const { isEnabled: isPreview } = await draftMode();
 
     return (
-        <html lang="bg" suppressHydrationWarning className={`${inter.variable} ${libreCaslonText.variable} ${roboto.variable} ${robotoMono.variable} ${cormorantGaramond.variable}`}>
+        <html lang="bg" suppressHydrationWarning className={`${roboto.variable} ${cormorantGaramond.variable}`}>
             <head>
                 <link rel="preconnect" href="https://images.prismic.io" />
             </head>

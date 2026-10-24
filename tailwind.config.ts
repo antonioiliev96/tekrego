@@ -75,7 +75,7 @@ export default {
   		},
   		fontFamily: {
   			serif: [
-  				'Libre Caslon Text',
+  				'var(--font-cormorant)',
   				'ui-serif',
   				'Georgia',
   				'Cambria',
@@ -84,7 +84,7 @@ export default {
   				'serif'
   			],
   			sans: [
-  				'Roboto',
+  				'var(--font-roboto)',
   				'ui-sans-serif',
   				'system-ui',
   				'-apple-system',
@@ -96,7 +96,6 @@ export default {
   				'sans-serif'
   			],
   			mono: [
-  				'Roboto Mono',
   				'ui-monospace',
   				'SFMono-Regular',
   				'Menlo',

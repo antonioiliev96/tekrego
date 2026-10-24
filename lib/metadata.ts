@@ -74,22 +74,23 @@ export function generateMetadata(config: OpenGraphConfig = {}): Metadata {
 // Default metadata for the site
 export const defaultMetadata = generateMetadata();
 
-// Specific metadata for different page types
+// Specific metadata for different page types. Titles stay short: the root
+// layout's title template appends the site name.
 export const serviceMetadata = (serviceName: string, serviceDescription: string) => 
   generateMetadata({
-    title: `${serviceName} | ${siteConfig.business.name}`,
+    title: serviceName,
     description: serviceDescription,
     url: `${siteConfig.seo.siteUrl}/services`,
   });
 
 export const contactMetadata = generateMetadata({
-  title: `Контакти | ${siteConfig.business.name}`,
+  title: "Контакти",
   description: `Свържете се с ${siteConfig.business.name} в Русе. Телефон: ${siteConfig.business.phone}. Адрес: ${siteConfig.business.address.full}`,
   url: `${siteConfig.seo.siteUrl}/contact`,
 });
 
 export const galleryMetadata = generateMetadata({
-  title: `Галерия | ${siteConfig.business.name}`,
+  title: "Галерия",
   description: `Вижте нашето професионално масажно студио в Русе. Уютна обстановка за релаксация и лечебни масажи.`,
   url: `${siteConfig.seo.siteUrl}/gallery`,
 });
