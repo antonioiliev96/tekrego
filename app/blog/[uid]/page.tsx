@@ -144,10 +144,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 </header>
 
                 {isFilled.image(cover) && (
-                    <div className="container-narrow mt-8 md:mt-10">
-                        <div className="relative aspect-[16/9] rounded-2xl overflow-hidden shadow-card">
-                            <PrismicNextImage field={cover} fill priority sizes="(max-width: 896px) 100vw, 896px" className="object-cover" />
-                        </div>
+                    // The cover keeps its own aspect ratio: editors also upload square
+                    // infographics, and a fixed 16:9 crop cut off their text.
+                    // max-h keeps a tall image within one screen.
+                    <div className="container-narrow mt-8 md:mt-10 flex justify-center">
+                        <PrismicNextImage
+                            field={cover}
+                            priority
+                            sizes="(max-width: 896px) 100vw, 896px"
+                            className="w-auto h-auto max-w-full max-h-[80vh] rounded-2xl shadow-card"
+                        />
                     </div>
                 )}
 
